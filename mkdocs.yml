@@ -1,0 +1,169 @@
+site_name: bryanpoulin.dev
+site_description: Personal blog of Bryan Poulin
+site_url: https://bryanpoulin.dev
+site_author: Bryan Poulin
+repo_url: https://bryanpoulin.dev 
+repo_name: bryan-pouiln/bryanpoulin.dev
+
+theme:
+  name: material
+  logo: assets/logo.png
+  favicon: assets/favicon.ico
+  #custom_dir: overrides
+  features:
+    # - content.action.edit
+    # - content.action.view
+    # - content.code.annotate
+    # - content.code.copy
+    # - content.tooltips
+    # - navigation.tabs
+    - navigation.sections
+    - navigation.footer
+    # - navigation.indexes
+    # - navigation.top
+    # - navigation.tracking
+    # - search.highlight
+    # - search.share
+    # - search.suggest
+    # - toc.follow
+
+  palette:
+    # Palette toggle for automatic mode
+    # - media: "(prefers-color-scheme)"
+    #   toggle:
+    #     icon: material/brightness-auto
+    #     name: Switch to light mode
+
+    # Pallete toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-night
+        # icon: material/brightness-7
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: teal
+      accent: deep orange
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+plugins:
+  - blog:
+      blog_dir: blog  # blog ilivs under docs/blog
+      blog_toc: true  #adds sidebar TOC for posts
+      post_url_format: "{slug}"
+      post_readtime: true
+#   - git-committers:
+#       enabled: true
+#       repository: james-willett/jameswillett.dev
+#       branch: main
+#       token: !ENV GH_TOKEN
+#   - git-revision-date-localized:
+#       type: date
+#       fallback_to_build_date: false
+#       enable_creation_date: true
+#       enabled: true
+#   - glightbox:
+#       touchNavigation: false
+#       loop: false
+#       effect: zoom
+#       width: 100%
+#       height: auto
+#       zoomable: true
+#       draggable: true
+#   - search:
+#       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
+#   - minify:
+#       minify_html: true
+#   - tags:
+#       tags_file: tags.md
+#   - privacy:
+#       links: 
+#       links_attr_map:
+#         target: _blank
+#       links_noopener: true
+#       enabled: true
+#       assets_exclude:
+#         - cdn.jsdelivr.net/npm/mathjax@3/*
+#         - giscus.app/*
+#   - rss:
+#       match_path: "posts/.*"
+#       pretty_print: false
+#       rss_feed_enabled: true
+#       date_from_meta:
+#         as_creation: date.created
+#         as_update: date.updated
+
+extra:
+#   analytics:
+#     provider: google
+#     property: !ENV GOOGLE_ANALYTICS_KEY
+  
+  social:
+    - icon: simple/youtube
+      link: https://youtube.com/@bryan-poulin
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/bryan-poulin
+    # - icon: fontawesome/brands/twitter
+    #   link: https://twitter.com/TheBryanPoulin
+    # - icon: fontawesome/brands/linkedin
+    #   link: https://www.linkedin.com/in/poulinbryan/
+
+# extra_css:
+#   - stylesheets/extra.css
+
+# hooks:
+#   - hooks/socialmedia.py
+
+markdown_extensions:
+  - pymdownx.highlight:
+      # anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - admonition
+#   - pymdownx.arithmatex:
+#       generic: true
+#   - footnotes
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+      # This can be useful for ensuring unique IDs across a document
+      # and for more predictable linking.
+      # combine_header_slug: true
+#   - pymdownx.mark
+  - attr_list
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+#   - md_in_html
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+copyright: |
+  &copy; 2024 <a href="https://github.com/bryan-poulin"  target="_blank" rel="noopener">Bryan Poulin LLC</a>
+
+# nav:
+#   - index.md
+#   - Tags: tags.md
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Guides:
+      - guides/example.md
+  - Blog:
+      - blog/index.md
