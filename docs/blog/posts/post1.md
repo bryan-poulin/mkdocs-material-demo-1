@@ -1,7 +1,16 @@
 ---
-date: 2025-08-29
+date: 
+  created: 2024-11-06
+categories:
+  - Tech
+tags:
+  - technology
+authors:
+  - team
+  - bryan
 ---
-# My First Blog Post!
+
+# My First Blog Post
 
 This is the summary of my first post. The content before the `<!-- more -->` tag will be used as the preview text.
 

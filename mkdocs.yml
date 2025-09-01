@@ -19,7 +19,7 @@ theme:
     # - navigation.tabs
     - navigation.sections
     - navigation.footer
-    # - navigation.indexes
+    - navigation.indexes
     # - navigation.top
     # - navigation.tracking
     # - search.highlight
@@ -28,29 +28,23 @@ theme:
     # - toc.follow
 
   palette:
-    # Palette toggle for automatic mode
-    # - media: "(prefers-color-scheme)"
-    #   toggle:
-    #     icon: material/brightness-auto
-    #     name: Switch to light mode
-
     # Pallete toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: teal
+      primary: indigo
       accent: deep orange
       toggle:
-        icon: material/weather-night
+        icon: material/brightness-7
         # icon: material/brightness-7
         name: Switch to dark mode
 
-    # Palette toggle for dark mode
+# Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: teal
+      primary: indigo
       accent: deep orange
       toggle:
-        icon: material/weather-sunny
+        icon: material/brightness-4
         name: Switch to light mode
 
   font:
@@ -59,7 +53,12 @@ theme:
 
 plugins:
   - blog:
-      blog_dir: blog  # blog ilivs under docs/blog
+      blog_dir: blog
+      # archive_date_format: MM/yyyy
+      # archive_url_date_format: MM/yyyy
+      categories_allowed:
+        - Tech
+        - Lifestyle
       blog_toc: true  #adds sidebar TOC for posts
       post_url_format: "{slug}"
       post_readtime: true
@@ -81,12 +80,15 @@ plugins:
 #       height: auto
 #       zoomable: true
 #       draggable: true
-#   - search:
+  - search:
 #       separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
 #   - minify:
 #       minify_html: true
-#   - tags:
-#       tags_file: tags.md
+  - tags:
+      enabled: true
+      ### Config value 'plugins': Plugin 'material/tags' option 'tags_file':
+      ### This setting is not required anymore.
+      # tags_file: blog/tags.md
 #   - privacy:
 #       links: 
 #       links_attr_map:
@@ -96,13 +98,13 @@ plugins:
 #       assets_exclude:
 #         - cdn.jsdelivr.net/npm/mathjax@3/*
 #         - giscus.app/*
-#   - rss:
-#       match_path: "posts/.*"
-#       pretty_print: false
-#       rss_feed_enabled: true
-#       date_from_meta:
-#         as_creation: date.created
-#         as_update: date.updated
+  - rss:
+      match_path: "blog/posts/.*"
+      pretty_print: true
+      rss_feed_enabled: true
+      date_from_meta:
+        as_creation: date.created
+        as_update: date.updated
 
 extra:
 #   analytics:
@@ -111,19 +113,15 @@ extra:
   
   social:
     - icon: simple/youtube
-      link: https://youtube.com/@bryan-poulin
+      link: https://youtube.com/@bryanpoulin
     - icon: fontawesome/brands/github-alt
       link: https://github.com/bryan-poulin
-    # - icon: fontawesome/brands/twitter
-    #   link: https://twitter.com/TheBryanPoulin
-    # - icon: fontawesome/brands/linkedin
-    #   link: https://www.linkedin.com/in/poulinbryan/
 
 # extra_css:
 #   - stylesheets/extra.css
 
-# hooks:
-#   - hooks/socialmedia.py
+hooks:
+  - hooks/socialmedia.py
 
 markdown_extensions:
   - pymdownx.highlight:
@@ -138,15 +136,12 @@ markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
-      # This can be useful for ensuring unique IDs across a document
-      # and for more predictable linking.
-      # combine_header_slug: true
 #   - pymdownx.mark
   - attr_list
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
-#   - md_in_html
+  - md_in_html
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
@@ -167,3 +162,4 @@ nav:
       - guides/example.md
   - Blog:
       - blog/index.md
+      - Tags: blog/tags.md
