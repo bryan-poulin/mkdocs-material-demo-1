@@ -9,7 +9,7 @@ theme:
   name: material
   logo: assets/logo.png
   favicon: assets/favicon.ico
-  #custom_dir: overrides
+  custom_dir: overrides
   features:
     # - content.action.edit
     # - content.action.view
@@ -59,8 +59,7 @@ plugins:
       categories_allowed:
         - Tech
         - Lifestyle
-      blog_toc: true  #adds sidebar TOC for posts
-      post_url_format: "{slug}"
+      blog_toc: true
       post_readtime: true
 #   - git-committers:
 #       enabled: true
