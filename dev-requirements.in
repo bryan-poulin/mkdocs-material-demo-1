@@ -1,0 +1,38 @@
+#
+# This file lists additional dependencies required for development,
+# testing, and maintenance, but not for running the production application.
+#
+# It includes the core application dependencies by referencing `requirements.in`.
+# After editing this file, run `pip-compile dev-requirements.in` to update
+# the compiled `dev-requirements.txt` file.
+#
+#-------------------------------------------------------------------------------
+# Include core dependencies for a complete development environment.
+#-------------------------------------------------------------------------------
+-r requirements.in
+
+#-------------------------------------------------------------------------------
+# Editable install of the current project (if it is a Python package).
+# The `-e .` notation links your virtual environment to the source code,
+# so changes are immediately reflected without needing to reinstall.
+# This requires your project to have a `pyproject.toml` or `setup.py` file.
+#-------------------------------------------------------------------------------
+-e .
+
+#-------------------------------------------------------------------------------
+# Testing tools
+#-------------------------------------------------------------------------------
+pytest
+pytest-cov # For code coverage reports
+
+#-------------------------------------------------------------------------------
+# Linting and static analysis tools
+#-------------------------------------------------------------------------------
+flake8
+mypy
+
+#-------------------------------------------------------------------------------
+# Other development utilities (e.g., debugging, building docs)
+#-------------------------------------------------------------------------------
+pdbpp # Enhanced Python debugger
+# sphinx # For documentation generation

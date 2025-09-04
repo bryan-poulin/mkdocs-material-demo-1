@@ -32,6 +32,7 @@ venv
 # Build files
 build
 requirements.in
+requirements.frozen
 site
 
 # Distribution files

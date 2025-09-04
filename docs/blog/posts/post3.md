@@ -1,7 +1,9 @@
 ---
+draft: false
 date: 
-  created: 2024-12-07
-  updated: 2023-12-08
+  created: 2025-09-01
+  updated: 2025-09-02
+readtime: 5
 categories:
   - Tech
 tags:
@@ -12,7 +14,7 @@ authors:
 
 # My Third Blog Post
 
-This is the summary of my third post. The content before the `<!-- more -->` tag will be used as the preview text. `readtime: 5`
+This is the summary of my third post. The content before the `<!-- more -->` tag will be used as the preview text.
 
 <!-- more -->
 

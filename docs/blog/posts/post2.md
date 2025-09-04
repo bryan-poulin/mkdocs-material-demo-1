@@ -1,20 +1,20 @@
 ---
+draft: true
 date: 
   created: 2024-11-20
-draft: true
+  updated: 2024-11-20
+readtime: 5
 categories:
   - Tech
-  - Lifestyle
 tags:
   - technology
-  - life updates
 authors: 
   - squidfunk
 ---
 
 # My Second Blog Post
 
-This is the summary of my second post. The content before the `<!-- more -->` tag will be used as the preview text. `draft: true`
+This is the summary of my second post. The content before the `<!-- more -->` tag will be used as the preview text.
 
 <!-- more -->
 

@@ -21,7 +21,7 @@ copyright: |
 extra:
   analytics:
     provider: google
-    property: !ENV GOOGLE_ANALYTICS_KEY
+    property: G-503565128
   social:
     - icon: simple/youtube
       link: https://youtube.com/@bryanpoulin
@@ -31,19 +31,22 @@ extra:
 # extra_css:
 #   - stylesheets/extra.css
 
-extra_javascript:
+hooks:
+  - hooks/socialmedia.py
+
+extra_javascript: 
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 markdown_extensions:  
   - abbr # used for Tooltips
-  - attr_list
-  - md_in_html # used for annotatons
   - admonition
+  - attr_list
   - footnotes
+  - md_in_html # used for annotatons
   - pymdownx.arithmatex:
       generic: true
-  #- pymdownx.caret
-  #- pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.critic
   - pymdownx.details
   - pymdownx.emoji:
       emoji_index: !!python/name:material.extensions.emoji.twemoji
@@ -63,67 +66,21 @@ markdown_extensions:
       alternate_style: true
       combine_header_slug: true
 
-theme:
-  name: material
-  logo: assets/logo.png
-  favicon: assets/favicon.ico
-  custom_dir: overrides
-  features:
-    - content.action.edit
-    - content.action.view
-    - content.code.annotate
-    - content.code.copy
-    - content.tooltips
-    - navigation.tabs
-    - navigation.sections
-    - navigation.footer
-    - navigation.indexes
-    - navigation.top
-    # - navigation.tracking
-    - search.highlight
-    - search.share
-    - search.suggest
-    - toc.follow
-
-  palette:
-    # Pallete toggle for light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default
-      primary: indigo
-      accent: deep orange
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-
-# Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      primary: indigo
-      accent: deep orange
-      toggle:
-        icon: material/brightness-4
-        name: Switch to light mode
-
-  font:
-    text: Roboto
-    code: Roboto Mono
-
 plugins:
   - blog:
       blog_dir: blog
-      # categories_allowed:
-      #   - Tech
-      #   - Lifestyle
+      archive_date_format: yyyy
+      archive_url_date_format: yyyy
+      categories_allowed:
+        - Tech
+        - Lifestyle
       blog_toc: true
-  - search:
-      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
-  # - git-revision-date-localized:
-  #     type: datetime
-  #     locale: en
-  #     fallback_to_build_date: true
-  #     enable_creation_date: true
-  - awesome-nav:
-      filename: .nav.yml
+      post_url_format: "{slug}"
+  # - git-committers:
+  #     enabled: true
+  #     repository: james-willett/jameswillett.dev
+  #     branch: main
+  #     token: !ENV GH_TOKEN
   # - glightbox:
   #     touchNavigation: false
   #     loop: false
@@ -132,20 +89,66 @@ plugins:
   #     height: auto
   #     zoomable: true
   #     draggable: true
-  #     auto_caption: false
-  #     caption_position: bottom
+  # - git-revision-date-localized:
+  #     type: date
+  #     fallback_to_build_date: false
+  #     enable_creation_date: true
+  #     enabled: true
+  - search:
+      separator: '[\s\-,:!=\[\]()"`/]+|\.(?!\d)|&[lg]t;|(?!\b)(?=[A-Z][a-z])'
   - tags:
       enabled: true
-  - rss:
-      match_path: "blog/posts/.*"
-      pretty_print: true
-      rss_feed_enabled: true
-      date_from_meta:
-        as_creation: date.created
-        as_update: date.updated
+      tags_allowed:
+        - technology
+        - lifestyle updates
+  # - rss:
+  #     match_path: "blog/posts/.*"
+  #     pretty_print: true
+  #     rss_feed_enabled: true
+  #     date_from_meta:
+  #       as_creation: date.created
+  #       as_update: date.updated
 
-hooks:
-  - hooks/socialmedia.py
+theme:
+  name: material
+  custom_dir: overrides
+  features:
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    - content.tooltips
+    - navigation.indexes
+    - navigation.footer
+    - navigation.instant
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    # - navigation.tracking
+    - search.highlight
+    - search.suggest
+    - toc.follow  
+  language: en
+  palette:
+    - media: "(prefers-color-scheme: dark)"
+      primary: indigo
+      accent: blue
+      scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      primary: indigo
+      accent: blue
+      scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+  font:
+    text: "Roboto"
+    code: "Roboto Mono"
+  favicon: assets/favicon.png
+  logo: assets/logo.png
 
 # nav:
 #   - Home: index.md

@@ -1,6 +1,8 @@
 ---
 date: 
   created: 2024-11-06
+  # updated: 2024-11-06
+draft: false
 categories:
   - Tech
 tags:
